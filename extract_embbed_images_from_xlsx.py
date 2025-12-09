@@ -112,8 +112,8 @@ class XLSXImageExtractorGUI:
         self.check_queue()
         
         # 设置默认输出目录为桌面
-        # desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
-        # self.output_dir_var.set(desktop_path)
+        desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
+        self.output_dir_var.set(desktop_path)
     
     def browse_file(self):
         """浏览并选择XLSX文件"""
@@ -130,7 +130,7 @@ class XLSXImageExtractorGUI:
     
     def browse_output_dir(self):
         """浏览并选择输出目录"""
-        dir_path = filedialog.askdirectory(title="选择输出目录")
+        dir_path = win_path(filedialog.askdirectory(title="选择输出目录"))
         if dir_path:
             self.output_dir_var.set(dir_path)
     
