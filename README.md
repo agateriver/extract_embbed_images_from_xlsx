@@ -3,7 +3,12 @@
 这是一个带有图形用户界面(GUI)的XLSX单元格内嵌入图像提取工具。
 
 使用情形如：
-WPS Office 收集表中嵌入了图像的单元格（如用于上传图像的单元格、用于手写签名的单元格）。当收集表导出为xlsx后，此工具可用于提取这些嵌入的图像。后续可用这些提取的图像进行邮件合并等操作。用WPS打开这个xlsx时，嵌入图像的单元格会用`DISPIMG`函数显示对应的嵌入图像，比如 `=DISPIMG("ID_88D894DE092B441D8339B43876CEB428",1) `。公式中的第一个参数对应嵌入图像的内部名称，对应提取结果文件`extracted_images.xlsx`中的`图像名称`列。可以提取公式的第一个参数（比如可用公式`=REGEXP(FORMULATEXT(K2),"ID_.{32}")`提取`K2`单元格内嵌入的图像内部名称），然后用xlookup在提取结果文件中查找对应的提取图像文件存放的位置。
+WPS Office 收集表(Collection Form)中可能含有嵌入了图像的单元格（如用于上传图像的单元格、用于手写签名的单元格）。当收集表导出为xlsx后，此工具可用于提取这些嵌入的图像。后续可用这些提取的图像进行邮件合并等操作。用WPS打开这个xlsx时，嵌入图像的单元格会用`DISPIMG`函数显示对应的嵌入图像，比如 `=DISPIMG("ID_88D894DE092B441D8339B43876CEB428",1) `。公式中的第一个参数对应嵌入图像的内部名称，对应提取结果文件`extracted_images.xlsx`中的`图像名称`列。可以提取公式的第一个参数（比如可用公式`=REGEXP(FORMULATEXT(K2),"ID_.{32}")`提取`K2`单元格内嵌入的图像内部名称），然后用xlookup在提取结果文件中查找对应的提取图像文件存放的位置。
+
+This is an GUI tool for extracting embedded images from excel worksheet.
+
+USE CASE:
+WPS Office collection forms may contain cells with embedded images (such as cells for uploading images or for handwritten signatures). This tool can be used to extract these embedded images after the collection form is exported as an XLSX file. These extracted images can then be used for operations such as mail merge. When you open this XLSX file with WPS, the cells with embedded images will display the corresponding embedded images using the `DISPIMG` function, for example, `=DISPIMG("ID_88D894DE092B441D8339B43876CEB428",1)`. The first parameter in the formula corresponds to the internal name of the embedded image, which corresponds to the `Image Name` column in the extracted result file `extracted_images.xlsx`. You can extract the first parameter of the formula (for example, you can use the formula `=REGEXP(FORMULATEXT(K2),"ID_.{32}")` to extract the internal name of the image embedded in cell `K2`, and then use xlookup to find the location of the corresponding extracted image file in the extracted result file.
 
 ## 功能特点
 
